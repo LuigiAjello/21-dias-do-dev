@@ -1,3 +1,4 @@
+//MOTORISTA
 let NomeUsuario = prompt("Qual o seu nome?")
 let IdadeUsuario = Number(prompt("Qual a sua idade?"))
 let UsuarioPossuiCNH = prompt("Você possui CNH ?(S/N)")

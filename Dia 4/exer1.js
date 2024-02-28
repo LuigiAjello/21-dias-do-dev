@@ -1,3 +1,4 @@
+//RESTAURANTE 
 let fome = prompt("Você está com fome? Se sim Digite 'S' se não Digite 'N' ") //Usar let ou const????
 let dinheiro = prompt("Você tem dinheiro? Se sim Digite 'S' se não Digite 'N'")
 let restauranteAbertura = prompt("O restaurante está aberto? Se sim Digite 'S' se não Digite 'N'")
