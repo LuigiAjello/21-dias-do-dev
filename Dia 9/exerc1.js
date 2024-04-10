@@ -30,7 +30,6 @@ let profissao
         default:
         resultado = console.log("ERRO")
             break; 
-
     } 
         return resultado;
   }

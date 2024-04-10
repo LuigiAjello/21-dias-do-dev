@@ -16,13 +16,11 @@ do {
 if(confirmacao === "N") {
     console.log(nome, idade, salario);
 }
-
-
 let aumento = 0.015;
-ano = 2024;
+ano = 0
 for (i=1;i<11;i++){
-    ano +=1;
-    salario += salario + salario*aumento
+    ano ++;
+    salario = salario + salario *aumento
     aumento *=2
-    console.log (" ano "+ ano+ " : " + salario )
+    console.log (" ano "+ ano + " : " + salario )
 }
