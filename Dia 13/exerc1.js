@@ -5,6 +5,7 @@ class Computador {
         Video 
         Armazenamento 
         MemoriaRam 
+
         Ssd
         constructor(Tipo,Processador,Video,Armazenamento,MemoriaRam,Ssd){
             this.Tipo = Tipo
@@ -16,7 +17,7 @@ class Computador {
         }
             exibir(){
             console.log(`informacao do computador ${a}: `)
-            console.log(`Tipo: ${this.Tipo}`)
+            console.log(`Tipo:${this.Tipo}`)
             console.log(`Processador: ${this.Processador}`)
             console.log(`Video: ${this.Video}`)
             console.log(`Armazenamento: ${this.Armazenamento}`)
@@ -28,7 +29,6 @@ let ArrayComputadores = []
 let confirmacao1 = true 
 let IndexDoComputador = 0
 let a = 1 
-arrayfacilitador = ["Tipo", "Processador", "Video", "Armazenamento", "MemoriaRam", "Ssd"]
 while(confirmacao1){
 let Tipo = prompt("Qual o tipo do seu computador? desktop ou notebook. ")
 let Processador = prompt("Qual o processador do seu computador?.")
