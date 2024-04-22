@@ -1,27 +1,30 @@
 class Carro {
-    constructor(nome, potencia, velocidadeMaxima, aceleracao) {
+    Nome 
+    Potencia
+    VelocidadeMaxima
+    Aceleracao
+    constructor(nome,potencia,velocidadeMaxima,aceleracao ){
         this.Nome = nome
         this.Potencia = potencia
         this.VelocidadeMaxima = velocidadeMaxima
-        this.Aceleracao = aceleracao         
+        this.Aceleracao= aceleracao         
     }           
-    
-    SegundosParaPercorrer(distancia) {
-        return distancia / (this.VelocidadeMaxima / this.Aceleracao)
+    SegundosParaPercorrer(distancia){
+        let Resultado = distancia/(this.VelocidadeMaxima/this.Aceleracao)            
+        return Resultado
     }
 }
-
 class Corrida {
     constructor(Nome, Tipo, distancia) {
-        this.Nome = Nome
-        this.Tipo = Tipo 
-        this.Distancia = distancia 
-        this.Participantes = []
-        this.Vencedor = ""
+        this.Nome = Nome;
+        this.Tipo = Tipo; 
+        this.Distancia = distancia; 
+        this.Participantes = [];
+        this.Vencedor = ""; // Alterado para armazenar o objeto do carro vencedor
     }
 
     DefinirVencedor() {
-        let tempos = []
+        let tempos = [];
         for (let i = 0; i < this.Participantes.length; i++) {
             let tempo = this.Participantes[i].SegundosParaPercorrer(this.Distancia)
             tempos[i] = {carro: this.Participantes[i], tempo: tempo}
@@ -33,8 +36,11 @@ class Corrida {
 }
 
 let corrida = new Corrida("Monaco", "F1", 60000 )
-corrida.Participantes[0] = new Carro("Ferrari", 120, 160, 5)
-corrida.Participantes[1] = new Carro("Mercedes", 110, 150, 3)
-corrida.Participantes[2] = new Carro("Ferrari", 105, 145, 2)
-
+corrida.Participante[0]= new Carro ("ferrari",120,160,5)
+corrida.Participante[1]= new Carro ("Mercedes",110,150,3)
+corrida.Participante[2]= new Carro ("ferrari",105,145,2)
+let medias=[]
+for(let i = 0;i<corrida.Participante.length;i++){
+    medias[i] = corrida.Participante[i].SegundosParaPercorrer(corrida.Distancia);
+}
 corrida.DefinirVencedor()
