@@ -1,5 +1,7 @@
 let ArrayDeHoteis = []
 let ArrayDeReservas = []
+let idHotel = 1
+let idReserva = 1
 class Hotel {
     id 
     nome 
@@ -21,7 +23,7 @@ class Reserva {
      Diaentrada
      DiaSaida
     constructor( idReserva,idHotel ,nomeResponsavel,Diaentrada,DiaSaida){
-    this.id = idReserva
+    this.idReserva = idReserva
     this.idHotel =idHotel 
     this.nomeResponsavel = nomeResponsavel
     this.Diaentrada=Diaentrada
@@ -29,27 +31,42 @@ class Reserva {
     }
 }
 function CadastroHotel() {
-    let idHotel = Number(prompt("Id do Hotel: "))
     let nome =prompt("Nome do Hotel: ")
     let categoria =prompt("categoria do Hotel: ")
     let endereco = prompt("endereço do Hotel: ")
     let telefone= Number(prompt("Telefone do Hotel: "))
     let NovoHotel = new Hotel (idHotel, nome ,categoria, endereco,telefone)
+    idHotel++ 
     ArrayDeHoteis.push(NovoHotel)
 }
 function CadastroReserva() {
-    let idReserva = Number(prompt("Id da reserva: "))
-    let idHotel  = Number(prompt("Id do Hotel: "))
+    let idHotel  
+    let existe = false
+    do {
+        idHotel = Number(prompt("Id do Hotel: "))
+        for(let i = 0; i< ArrayDeHoteis.length;i++){
+            if( idHotel == ArrayDeHoteis[i].id){
+                i = ArrayDeHoteis.length
+                existe = true 
+            } else if (i == ArrayDeHoteis.length - 1)
+               console.log("Id de hotel não cadastrado. "); 
+        }
+    } while (existe === false);
     let nomeResponsavel =prompt("nome do responsavel : ")
     let Diaentrada = Number(prompt("Dia de Entrada: "))
-    let DiaSaida = Number(prompt("Dia de saida: "))
+    let DiaSaida 
+    do {
+        DiaSaida= Number(prompt("Dia de saida: "))
+        if(DiaSaida < Diaentrada)
+            console.log("Dia de saida maior que o de entrada ");
+    } while (DiaSaida < Diaentrada);
     let NovaReserva = new Reserva (idReserva,idHotel ,nomeResponsavel,Diaentrada,DiaSaida)
+    idReserva ++
     ArrayDeReservas.push(NovaReserva)
 }
-function exibeReserva() {
+function exibeReservaID() {
     let idReserva = Number(prompt("Digite o ID da reserva:"));
     let reservaEncontrada = ArrayDeReservas.find(reserva => reserva.id === idReserva);
-
     if(reservaEncontrada.length > 0) {
         console.log("Detalhes da Reserva:");
         console.log("ID da Reserva:", reservaEncontrada.id);
@@ -89,10 +106,9 @@ function CategoriasHoteis() {
         console.log("telefone :",hotel.telefone );
         console.log("Endereço :", hotel.endereco);
         console.log("#################################");
-    });
+        
+    })
     }
-    CadastroHotel()
-    CadastroReserva()
-    exibeReserva()
-    NomeReservas()
-CategoriasHoteis() 
+function MudarTelefone(idHotel,telefone) {
+ArrayDeHoteis[idHotel -1].telefone = telefone
+console.log 
