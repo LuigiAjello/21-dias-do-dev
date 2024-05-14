@@ -22,13 +22,26 @@ function Cadastrar_Livro () {
 }
 let confirmacao = true 
 while (confirmacao) {
-let pergunta = prompt("Digite um ")
+let pergunta =prompt("Digite 1 para outro livro e 2 para encerrar ")
     switch (pergunta) {
-        case 1:
-            
+        case "1":
+            Cadastrar_Livro()
             break;
-    
+        case "2":
+            confirmacao = false
+            break;
         default:
+            alert("ERRO")
             break;
+    }
+}
+class Biblioteca {
+
+
+    
+constructor(){
+
+
+
     }
 }
