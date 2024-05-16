@@ -1,15 +1,26 @@
 class Livro {
-Titulo
-Autor
-Editora
-AnoPublicacao
-Disponibilidade 
-constructor(Titulo, Autor, Editora, AnoPublicacao){
-    this.Titulo = Titulo
-    this.Autor = Autor
-    this.Editora= Editora
-    this.AnoPublicacao = AnoPublicacao
-    this.Disponibilidade = true 
+    Titulo
+    Autor
+    Editora
+    AnoPublicacao
+    Disponibilidade 
+    constructor(Titulo, Autor, Editora, AnoPublicacao){
+        this.Titulo = Titulo
+        this.Autor = Autor
+        this.Editora= Editora
+        this.AnoPublicacao = AnoPublicacao
+        this.Disponibilidade = true 
+    }
+}
+class Biblioteca {
+Nome
+Endereco 
+Telefone 
+AcervoDeLivros   
+constructor(){
+
+
+
     }
 }
 let arraydelivros= []
@@ -35,13 +46,4 @@ let pergunta =prompt("Digite 1 para outro livro e 2 para encerrar ")
             break;
     }
 }
-class Biblioteca {
 
-
-    
-constructor(){
-
-
-
-    }
-}
