@@ -16,11 +16,20 @@ class Biblioteca {
 Nome
 Endereco 
 Telefone 
-AcervoDeLivros   
-constructor(){
+AcervoDeLivros = []   
+constructor(Nome,Endereco,Telefone,AcervoDeLivros){
+this.Nome = Nome
+this.Endereco= Endereco
+this.Telefone = Telefone
+this.AcervoDeLivros = AcervoDeLivros
+    }
+     Buscar_Nome_Livro(NomeDoLivro) {
+        this.AcervoDeLivros.forEach(livro=>{
+            if (livro.Titulo== NomeDoLivro) {
+                
+            }
 
-
-
+        })
     }
 }
 let arraydelivros= []
