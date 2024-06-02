@@ -51,7 +51,7 @@ let pergunta =prompt("Digite 1 para outro livro e 2 para encerrar ")
             confirmacao = false
             break;
         default:
-            alert("ERRO")
+            alert("ERRO!!")
             break;
     }
 }
